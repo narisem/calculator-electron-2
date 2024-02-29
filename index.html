@@ -80,8 +80,48 @@
     document.querySelector('#minus').addEventListener('click', onClickOperator('-'));  //_ 빼기
     document.querySelector('#divide').addEventListener('click', onClickOperator('/'));  //* 나누기
     document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));  // / 더하기
-    document.querySelector('#calculate').addEventListener('click', () => {});  //계산하기
-    document.querySelector('#clear').addEventListener('click', () => {});  //C 지우기
+    document.querySelector('#calculate').addEventListener('click', () => { //계산하기
+    if (numTwo) {
+        if (operator === '+') {
+            $result.value = parseInt(numOne) + parseInt(numTwo);
+        } else if (operator === '-') {
+            $result.value = parseInt(numOne) - parseInt(numTwo);
+        } else if (operator === '*') {
+            $result.value = parseInt(numOne) * parseInt(numTwo);
+        } else if (operator === '/') {
+            $result.value = parseInt(numOne) / parseInt(numTwo);
+        }
+    } else {
+        alert('숫자를 먼저 입력하세요.');
+    }
+    //     if (numTwo) {
+    //     switch (operator) {
+    //         case '+':
+    //           $result.value = parseInt(numOne) + parseInt(numTwo);
+    //           break;
+    //         case '-':
+    //           $result.value = parseInt(numOne) - parseInt(numTwo);
+    //           break;
+    //         case '*':
+    //           $result.value = parseInt(numOne) * parseInt(numTwo);
+    //           break;
+    //         case '/':
+    //           $result.value = parseInt(numOne) / parseInt(numTwo);
+    //           break;
+    //         default:
+    //           break;
+    //       }
+    // } else {
+    //     alert('숫자를 먼저 입력하세요.');
+    // }
+    });  //계산하기
+    document.querySelector('#clear').addEventListener('click', () => {
+    let numOne = '';
+    let operator  = '';
+    let numTwo = '';
+    $operator.value = '';
+    $result.value = '';
+    });  //C 지우기
     </script>
 </body>
 </html>
